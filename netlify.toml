@@ -1,6 +1,4 @@
 [build]
   publish = "."
   command = ""
-
-[build.environment]
-  NODE_VERSION = "18"
+  ignore = "exit 0"
