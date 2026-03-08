@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waves Become Wings | Official Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #080a0f;
+            --accent: #7dd3fc;
+        }
+        body {
+            background-color: var(--bg-deep);
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.02em;
+        }
+        .grain {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Noisy_Texture.png');
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 50;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .nav-link {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .nav-link:hover {
+            color: var(--accent);
+            text-shadow: 0 0 15px rgba(125, 211, 252, 0.4);
+            transform: translateY(-1px);
+        }
+        .fade-in {
+            animation: fadeIn 2.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .wave-bg {
+            background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&q=80&w=2400');
+            background-size: cover;
+            background-position: center;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="grain"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-40 p-8 flex justify-between items-center transition-all duration-700" id="navbar">
+        <div class="text-2xl font-bold tracking-tighter hero-title italic">W.B.W</div>
+        <div class="hidden lg:flex gap-12 text-[10px] uppercase tracking-[0.5em] font-light">
+            <a href="#featured" class="nav-link">Latest</a>
+            <a href="#listen" class="nav-link">Listen</a>
+            <a href="#discography" class="nav-link">Discography</a>
+            <a href="#story" class="nav-link">Story</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="flex gap-6 items-center">
+            <a href="https://open.spotify.com/artist/4c19TgsrE6nbngIympFLb8" target="_blank" title="Spotify" class="opacity-50 hover:opacity-100 transition-opacity">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.508 17.302c-.223.367-.704.484-1.07.262-2.974-1.816-6.717-2.227-11.127-1.22-.416.096-.826-.166-.922-.582-.096-.417.166-.827.582-.922 4.836-1.103 8.97-.625 12.275 1.393.367.222.483.704.262 1.07zm1.47-3.256c-.28.455-.878.6-1.333.32-3.404-2.092-8.594-2.7-12.618-1.478-.513.156-1.054-.133-1.21-.646-.156-.513.133-1.054.646-1.21 4.593-1.393 10.31-.712 14.195 1.677.455.28.6.878.32 1.333zm.126-3.403c-4.08-2.422-10.793-2.645-14.704-1.458-.625.19-1.284-.167-1.473-.793-.19-.625.167-1.284.793-1.473 4.486-1.362 11.89-1.103 16.57 1.677.562.334.75 1.06.417 1.622-.334.562-1.06.75-1.622.417z"/></svg>
+            </a>
+            <a href="https://wavesbecomewings.bandcamp.com/" target="_blank" title="Bandcamp" class="opacity-50 hover:opacity-100 transition-opacity">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5H0z"/></svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#080a0f]/40 to-[#080a0f] z-10"></div>
+            <div class="w-full h-full wave-bg opacity-30 scale-110"></div>
+        </div>
+
+        <div class="relative z-20 fade-in">
+            <h1 class="hero-title text-6xl md:text-[10rem] italic mb-6 leading-tight">Darker Skies</h1>
+            <p class="text-[11px] md:text-sm font-light tracking-[0.9em] uppercase opacity-40 mb-16">Out Now | Waves Become Wings</p>
+            <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+                <a href="https://distrokid.com/hyperfollow/wavesbecomewings/darker-skies" target="_blank" class="px-16 py-5 border border-white/10 hover:border-white/30 hover:bg-white/5 transition-all duration-1000 uppercase tracking-[0.4em] text-[10px]">Listen Now</a>
+                <a href="#featured" class="px-16 py-5 glass hover:bg-white/10 transition-all duration-1000 uppercase tracking-[0.4em] text-[10px]">Watch Video</a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-30 animate-pulse">
+            <div class="w-[1px] h-16 bg-gradient-to-b from-white to-transparent mx-auto"></div>
+        </div>
+    </section>
+
+    <!-- Featured Single Section -->
+    <section id="featured" class="py-40 px-6 max-w-6xl mx-auto">
+        <!-- New Primary: Darker Skies -->
+        <div class="grid md:grid-cols-2 gap-24 items-center mb-56">
+            <div class="relative group">
+                <div class="absolute -inset-4 bg-blue-500/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+                <div class="aspect-square bg-zinc-900 rounded-lg overflow-hidden border border-white/10 relative shadow-2xl">
+                    <img src="Darker Skies - Cover Art.jpg" alt="Darker Skies Cover Art" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000">
+                </div>
+            </div>
+            <div class="space-y-10">
+                <div>
+                    <span class="text-[10px] uppercase tracking-[0.5em] text-blue-400 mb-4 block">Latest Release</span>
+                    <h2 class="text-6xl hero-title italic mb-4">Darker Skies</h2>
+                    <p class="text-zinc-500 font-light tracking-widest text-sm italic mb-8">Official Visualizer Available</p>
+                    
+                    <!-- Video Container for Darker Skies -->
+                    <div class="video-container rounded shadow-2xl bg-black border border-white/5 overflow-hidden mb-10">
+                        <iframe 
+                            src="https://www.youtube.com/embed/FJR0iN7K95g" 
+                            title="Darker Skies Visualizer" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <p class="text-zinc-400 font-light leading-relaxed tracking-wide">
+                    A descent into the cinematic and the ethereal. "Darker Skies" continues the exploration of transformation, weaving haunting melodies through a tapestry of atmospheric soundscapes.
+                </p>
+                <div class="pt-4 flex flex-wrap gap-4">
+                    <a href="https://distrokid.com/hyperfollow/wavesbecomewings/darker-skies" target="_blank" class="px-12 py-4 glass hover:bg-white/5 transition-all uppercase tracking-[0.5em] text-[10px]">Listen Now</a>
+                    <a href="https://www.youtube.com/watch?v=FJR0iN7K95g" target="_blank" class="px-12 py-4 border border-white/10 hover:border-white/30 transition-all uppercase tracking-[0.5em] text-[10px]">Watch on YT</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secondary: Waves Align -->
+        <div class="grid md:grid-cols-2 gap-24 items-center mb-48 opacity-90 hover:opacity-100 transition-opacity duration-700">
+            <div class="space-y-10 order-2 md:order-1">
+                <div>
+                    <span class="text-[10px] uppercase tracking-[0.5em] text-zinc-500 mb-4 block">Recent Release</span>
+                    <h2 class="text-5xl hero-title italic mb-4">Waves Align</h2>
+                    <p class="text-zinc-500 font-light tracking-widest text-sm italic">Official Video</p>
+                </div>
+                <div class="video-container rounded shadow-2xl bg-black border border-white/5 overflow-hidden">
+                    <iframe 
+                        src="https://www.youtube.com/embed/DNVKLYDG3n8" 
+                        title="Waves Align Preview" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="pt-8">
+                    <a href="https://www.youtube.com/watch?v=DNVKLYDG3n8" target="_blank" class="px-12 py-4 border border-white/10 hover:bg-white/5 transition-all uppercase tracking-[0.5em] text-[10px]">Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="relative group order-1 md:order-2">
+                <div class="aspect-square bg-zinc-900 rounded-lg overflow-hidden border border-white/10 relative">
+                    <img src="WavesAlign5.jpg" alt="Waves Align Cover Art" class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-1000">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Listen Section -->
+    <section id="listen" class="py-40 px-6 max-w-6xl mx-auto text-center border-t border-white/5">
+        <h2 class="text-4xl hero-title italic mb-12">Listen</h2>
+        <p class="text-zinc-500 font-light tracking-widest text-sm mb-16 max-w-lg mx-auto">Explore our atmospheric soundscapes on your preferred platform.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <a href="https://wavesbecomewings.bandcamp.com/" target="_blank" class="group glass p-10 rounded-lg border-white/5 hover:border-blue-400/20 transition-all duration-700">
+                <div class="flex flex-col items-center">
+                    <svg class="w-6 h-6 mb-6 opacity-60 group-hover:opacity-100 group-hover:text-blue-300 transition-all" fill="currentColor" viewBox="0 0 24 24"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5H0z"/></svg>
+                    <span class="text-xs font-bold tracking-[0.4em] uppercase mb-2">Bandcamp</span>
+                    <span class="text-[9px] text-zinc-600 uppercase tracking-widest">Full Discography</span>
+                </div>
+            </a>
+            <a href="https://open.spotify.com/artist/4c19TgsrE6nbngIympFLb8" target="_blank" class="group glass p-10 rounded-lg border-white/5 hover:border-green-400/20 transition-all duration-700">
+                <div class="flex flex-col items-center">
+                    <svg class="w-6 h-6 mb-6 opacity-60 group-hover:opacity-100 group-hover:text-green-400 transition-all" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.508 17.302c-.223.367-.704.484-1.07.262-2.974-1.816-6.717-2.227-11.127-1.22-.416.096-.826-.166-.922-.582-.096-.417.166-.827.582-.922 4.836-1.103 8.97-.625 12.275 1.393.367.222.483.704.262 1.07zm1.47-3.256c-.28.455-.878.6-1.333.32-3.404-2.092-8.594-2.7-12.618-1.478-.513.156-1.054-.133-1.21-.646-.156-.513.133-1.054.646-1.21 4.593-1.393 10.31-.712 14.195 1.677.455.28.6.878.32 1.333zm.126-3.403c-4.08-2.422-10.793-2.645-14.704-1.458-.625.19-1.284-.167-1.473-.793-.19-.625.167-1.284.793-1.473 4.486-1.362 11.89-1.103 16.57 1.677.562.334.75 1.06.417 1.622-.334.562-1.06.75-1.622.417z"/></svg>
+                    <span class="text-xs font-bold tracking-[0.4em] uppercase mb-2">Spotify</span>
+                    <span class="text-[9px] text-zinc-600 uppercase tracking-widest">Streaming</span>
+                </div>
+            </a>
+            <a href="https://distrokid.com/hyperfollow/wavesbecomewings/darker-skies" target="_blank" class="group glass p-10 rounded-lg border-white/5 hover:border-accent/20 transition-all duration-700">
+                <div class="flex flex-col items-center">
+                    <svg class="w-6 h-6 mb-6 opacity-60 group-hover:opacity-100 group-hover:text-accent transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" /></svg>
+                    <span class="text-xs font-bold tracking-[0.4em] uppercase mb-2">Listen Now</span>
+                    <span class="text-[9px] text-zinc-600 uppercase tracking-widest">Darker Skies</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Discography Section -->
+    <section id="discography" class="py-40 px-6 max-w-4xl mx-auto border-t border-white/5">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl hero-title italic mb-4">Discography</h2>
+            <p class="text-[10px] uppercase tracking-[0.4em] text-zinc-600">Releases to date</p>
+        </div>
+        
+        <div class="space-y-4 max-w-2xl mx-auto">
+            <div class="flex justify-between items-end border-b border-white/5 pb-4 group">
+                <span class="text-xl font-bold text-blue-300">Darker Skies</span>
+                <span class="text-[9px] uppercase tracking-widest text-blue-400">March 7, 2026 | Single</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-white/5 pb-4 group">
+                <span class="text-xl font-light group-hover:text-blue-300 transition-colors">Waves Align</span>
+                <span class="text-[9px] uppercase tracking-widest text-zinc-600">January 2026 | Single</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-white/5 pb-4 group">
+                <span class="text-xl font-light group-hover:text-blue-300 transition-colors">Sometimes</span>
+                <span class="text-[9px] uppercase tracking-widest text-zinc-600">October 2025 | Single</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-white/5 pb-4 group">
+                <span class="text-xl font-light group-hover:text-blue-300 transition-colors">Open Door (Phaseflow Mix)</span>
+                <span class="text-[9px] uppercase tracking-widest text-zinc-600">March 2025 | Single</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-white/5 pb-4 group">
+                <span class="text-xl font-light group-hover:text-blue-300 transition-colors">Forgotten Dreams and Buried Memories</span>
+                <span class="text-[9px] uppercase tracking-widest text-zinc-600">December 2024 | Album</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-white/5 pb-4 group">
+                <span class="text-xl font-light group-hover:text-blue-300 transition-colors">If Things Have to Change e.p.</span>
+                <span class="text-[9px] uppercase tracking-widest text-zinc-600">April 2024 | EP</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-white/5 pb-4 group">
+                <span class="text-xl font-light group-hover:text-blue-300 transition-colors">Under a Blanket of Stars e.p.</span>
+                <span class="text-[9px] uppercase tracking-widest text-zinc-600">December 2023 | EP</span>
+            </div>
+            <div class="flex justify-between items-end border-b border-white/5 pb-4 group">
+                <span class="text-xl font-light group-hover:text-blue-300 transition-colors">In a Loop / Open Door</span>
+                <span class="text-[9px] uppercase tracking-widest text-zinc-600">December 2023 | Singles</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Story -->
+    <section id="story" class="py-48 px-6 bg-[#0a0c12]/40 relative">
+        <div class="max-w-3xl mx-auto text-center relative z-10">
+            <h2 class="text-5xl hero-title italic mb-16">The Story</h2>
+            <div class="space-y-10 text-zinc-400 font-light leading-relaxed text-xl">
+                <p>
+                    Bound by a shared love for the ethereal textures of <span class="text-white italic">Slowdive</span>, <span class="text-white italic">The Cure</span>, and the <span class="text-white italic">Cocteau Twins</span>, Andrew Padfield and Michael Webb have reunited to explore new sonic landscapes.
+                </p>
+                <p>
+                    This project marks a profound return to collaboration, emerging more than <span class="text-white">20 years</span> after their final performance together. 
+                </p>
+            </div>
+        </div>
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute -bottom-1/4 -right-1/4 w-1/2 h-full bg-blue-500/5 blur-[120px] rounded-full"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-32 border-t border-white/5 text-center px-6">
+        <div class="hero-title italic text-4xl mb-16">Waves Become Wings</div>
+        <div class="flex justify-center gap-12 mb-20 text-[10px] uppercase tracking-[0.5em] text-zinc-500">
+            <a href="https://wavesbecomewings.bandcamp.com/" target="_blank" class="hover:text-white transition-colors">Bandcamp</a>
+            <a href="https://open.spotify.com/artist/4c19TgsrE6nbngIympFLb8" target="_blank" class="hover:text-white transition-colors">Spotify</a>
+            <a href="#" class="hover:text-white transition-colors">Instagram</a>
+        </div>
+        <div class="max-w-md mx-auto mb-20">
+            <p class="text-[10px] uppercase tracking-[0.4em] text-zinc-700 mb-6">General Enquiries</p>
+            <a href="mailto:contact@wavesbecomewings.com" class="text-xl font-light hover:text-blue-300 transition-colors">contact@wavesbecomewings.com</a>
+        </div>
+        <p class="text-[9px] uppercase tracking-[0.6em] text-zinc-800">&copy; 2026 Waves Become Wings.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-[#080a0f]/90', 'backdrop-blur-2xl', 'py-6');
+                nav.classList.remove('p-8');
+            } else {
+                nav.classList.remove('bg-[#080a0f]/90', 'backdrop-blur-2xl', 'py-6');
+                nav.classList.add('p-8');
+            }
+        });
+    </script>
+</body>
+</html>
